@@ -1,6 +1,7 @@
 fail_on_violations: true
 
 scss:
+<<<<<<< HEAD
   config_file: scss/.scss-lint.yml
 
 jshint:
@@ -12,3 +13,14 @@ eslint:
 
 ruby:
   enabled: false
+=======
+  enabled: false
+
+javascript:
+  enabled: true
+  config_file: js/.jshintrc
+
+jscs:
+  enabled: true
+  config_file: js/.jscsrc
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185

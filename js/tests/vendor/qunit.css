@@ -1,12 +1,20 @@
 /*!
+<<<<<<< HEAD
  * QUnit 2.2.0
+=======
+ * QUnit 1.22.0
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
  * https://qunitjs.com/
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
  * https://jquery.org/license
  *
+<<<<<<< HEAD
  * Date: 2017-03-11T16:19Z
+=======
+ * Date: 2016-02-23T15:57Z
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
  */
 
 /** Font Family and Sizes */
@@ -60,6 +68,12 @@
 	padding: 0.5em 1em 0.5em 1em;
 	color: #366097;
 	background-color: #F4FF77;
+}
+
+#qunit-filteredTest {
+	padding: 0.5em 1em 0.5em 1em;
+	background-color: #F4FF77;
+	color: #366097;
 }
 
 #qunit-userAgent {

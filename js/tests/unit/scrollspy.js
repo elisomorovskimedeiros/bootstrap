@@ -200,6 +200,7 @@ $(function () {
       return deferred.promise()
     }
 
+<<<<<<< HEAD
     $.when(testElementIsActiveAfterScroll('#a-1', '#div-1'))
       .then(function () { return testElementIsActiveAfterScroll('#a-2', '#div-2') })
       .then(function () { done() })
@@ -276,6 +277,10 @@ $(function () {
 
     $.when(testElementIsActiveAfterScroll('#a-1', '#div-1'))
       .then(function () { return testElementIsActiveAfterScroll('#a-2', '#div-2') })
+=======
+    $.when(testElementIsActiveAfterScroll('#li-1', '#div-1'))
+      .then(function () { return testElementIsActiveAfterScroll('#li-2', '#div-2') })
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
       .then(function () { done() })
   })
 
@@ -529,6 +534,7 @@ $(function () {
       .then(function () { return testElementIsActiveAfterScroll('#li-100-2', '#div-100-2') })
       .then(function () { return testElementIsActiveAfterScroll('#li-100-1', '#div-100-1') })
       .then(function () { done() })
+<<<<<<< HEAD
   })
 
   QUnit.test('should allow passed in option offset method: offset', function (assert) {
@@ -613,6 +619,8 @@ $(function () {
 
     testOffsetMethod('js')
     testOffsetMethod('data')
+=======
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
   })
 
 })

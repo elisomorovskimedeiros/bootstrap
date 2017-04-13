@@ -1,7 +1,11 @@
 Before opening an issue:
 
 - [Search for duplicate or closed issues](https://github.com/twbs/bootstrap/issues?utf8=%E2%9C%93&q=is%3Aissue)
+<<<<<<< HEAD
 - [Validate](https://validator.w3.org/nu/) and [lint](https://github.com/twbs/bootlint#in-the-browser) any HTML to avoid common problems
+=======
+- [Validate](http://validator.w3.org/nu/) and [lint](https://github.com/twbs/bootlint#in-the-browser) any HTML to avoid common problems
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
 - Prepare a [reduced test case](https://css-tricks.com/reduced-test-cases/) for any bugs
 - Read the [contributing guidelines](https://github.com/twbs/bootstrap/blob/master/CONTRIBUTING.md)
 

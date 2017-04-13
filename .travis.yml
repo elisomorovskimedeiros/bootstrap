@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 sudo: false
+=======
+sudo: required
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
 dist: trusty
 language: node_js
 git:
@@ -7,26 +11,54 @@ node_js:
   - "4"
   - "7"
 before_install:
+<<<<<<< HEAD
   - if [[ `npm -v` != 4* ]]; then npm install -g npm@4; fi
   - "export TRAVIS_COMMIT_MSG=\"`git log --format=%B --no-merges -n 1`\""
+=======
+  # Remove ./node_modules/.bin from PATH so node-which doesn't replace Unix which and cause RVM to barf. See https://github.com/travis-ci/travis-ci/issues/5092
+  - export PATH=$(python -c 'from sys import argv;from collections import OrderedDict as od;print(":".join(od((p,None) for p in argv[1].split(":") if p.startswith("/")).keys()))' "$PATH")
+  - rvm install 2.2
+  - rvm use 2.2 --fuzzy
+  - "export TRAVIS_COMMIT_MSG=\"$(git log --format=%B --no-merges -n 1)\""
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip validator\]'; export TWBS_DO_VALIDATOR=$?; true
   - echo "$TRAVIS_COMMIT_MSG" | grep '\[skip sauce\]'; export TWBS_DO_SAUCE=$?; true
   - if [ "$TRAVIS_REPO_SLUG" = twbs-savage/bootstrap ]; then export TWBS_DO_VALIDATOR=0; fi
 install:
+<<<<<<< HEAD
   - bundle install --deployment --jobs=3 --retry=3
   - cp grunt/npm-shrinkwrap.json ./
   - npm install
 after_success:
   - if [ "$TWBS_TEST" = sauce-js-unit ]; then grunt/upload-preview.sh; fi
+=======
+  - bundle install --deployment --jobs=1
+  - cp grunt/npm-shrinkwrap.json ./
+  - npm install
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
 cache:
   directories:
     - node_modules
     - vendor/bundle
+<<<<<<< HEAD
     - "$HOME/google-cloud-sdk"
 env:
   - TWBS_TEST=core
   - TWBS_TEST=validate-html
   - TWBS_TEST=sauce-js-unit
+=======
+env:
+  global:
+    - NPM_CONFIG_PROGRESS="false"
+    - SAUCE_USERNAME="bootstrap"
+    - secure: "pJkBwnuae9dKU5tEcCqccfS1QQw7/meEcfz63fM7ba7QJNjoA6BaXj08L5Z3Vb5vBmVPwBawxo5Hp0jC0r/Z/O0hGnAmz/Cz09L+cy7dSAZ9x4hvZePSja/UAusaB5ogMoO8l2b773MzgQeSmrLbExr9BWLeqEfjC2hFgdgHLaQ="
+    - secure: "RKWpS+P20b4tG9tawzCMJSmQftoonmC7tJzyGYiHuEM1TcpHALLBcnzKlr/+DiPTfzDJWY4kS8pxfhK4uXOe8OHnhpMNub7LEWtFPePlZIervOJcsOydaQocTKqVVWD6OUubMeQmQ+tZmvmpjoJ1uPPEbFs9ciF7+dv3U5tLUZ0="
+    - secure: "XswSKBY0HJ/aO9VOBeWlvGpqSFF/DsJmNKz7o5RkJMJX340qe44J929uUNwwOwlv9YrgptzC2W6l8bpmZQV+p6IYs99SoSA8CCaUfIJaqeU9x/UiT5vIHgqaNax+vFJwvzHLpF5v/ggFqFEKCd54gCDasePLTztHeC4oL104iaQ="
+  matrix:
+    - TWBS_TEST=core
+    - TWBS_TEST=validate-html
+    - TWBS_TEST=sauce-js-unit
+>>>>>>> 9b7d1406b922300c5d01e99026e4fffc67445185
 matrix:
   exclude:
     - node_js: "4"
@@ -36,4 +68,4 @@ matrix:
 notifications:
   slack: heybb:iz4wwosL0N0EdaX1gvgkU0NH
   webhooks:
-    - http://savage.twbsapps.com/savage/travis
+    - http://savage1.twbsapps.com/savage/travis
